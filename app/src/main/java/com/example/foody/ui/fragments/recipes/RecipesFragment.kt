@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foody.viewmodels.MainViewModel
 import com.example.foody.adapters.RecipesAdapter
 import com.example.foody.databinding.FragmentRecipesBinding
-import com.example.foody.util.Constants.Companion.API_KEY
 import com.example.foody.util.NetworkResult
 import com.example.foody.util.observeOnce
 import com.example.foody.viewmodels.RecipesViewModel
@@ -23,7 +22,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class RecipesFragment : Fragment() {
 
-    private lateinit var mMainViewModel: MainViewModel
+    private lateinit var mainViewModel: MainViewModel
     private lateinit var mRecipesViewModel: RecipesViewModel
 
     private var _binding: FragmentRecipesBinding? = null
@@ -33,7 +32,7 @@ class RecipesFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mMainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+        mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
         mRecipesViewModel = ViewModelProvider(requireActivity()).get(RecipesViewModel::class.java)
     }
 
@@ -42,6 +41,8 @@ class RecipesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentRecipesBinding.inflate(inflater, container, false)
+        binding.lifecycleOwner = this
+        binding.mainViewModel = mainViewModel
 
 
         setupRecyclerView()
@@ -58,7 +59,7 @@ class RecipesFragment : Fragment() {
 
     private fun readDatabase() {
         lifecycleScope.launch{
-            mMainViewModel.readRecipes.observeOnce(viewLifecycleOwner) { database ->
+            mainViewModel.readRecipes.observeOnce(viewLifecycleOwner) { database ->
                 if (database.isNotEmpty()) {
                     Log.d("RecipesFragment", "readDatabase called")
                     mAdapter.setData(database[0].foodRecipe)
@@ -72,8 +73,8 @@ class RecipesFragment : Fragment() {
 
     private fun requestApiData() {
         Log.d("RecipesFragment", "request api data called")
-        mMainViewModel.getRecipes(mRecipesViewModel.applyQueries())
-        mMainViewModel.recipesResponse.observe(viewLifecycleOwner) { response ->
+        mainViewModel.getRecipes(mRecipesViewModel.applyQueries())
+        mainViewModel.recipesResponse.observe(viewLifecycleOwner) { response ->
             when (response) {
                 is NetworkResult.Success -> {
                     hideShimmerEffect()
@@ -97,7 +98,7 @@ class RecipesFragment : Fragment() {
 
     private fun loadDataFromCache(){
         lifecycleScope.launch{
-            mMainViewModel.readRecipes.observe(viewLifecycleOwner) { database ->
+            mainViewModel.readRecipes.observe(viewLifecycleOwner) { database ->
                 if(database.isNotEmpty()) {
                     mAdapter.setData(database[0].foodRecipe)
                 }
