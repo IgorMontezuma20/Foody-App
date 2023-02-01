@@ -63,9 +63,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:tint="@color/white"
-            android:backgroundTint="@color/purple_500"/>
+            android:backgroundTint="@color/purple_500"
+            android:contentDescription="@string/recipes_filter" />
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/error_imageView"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -78,7 +79,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/recyclerview"
             tools:visibility="visible"
-            android:visibility="invisible" />
+            android:visibility="invisible"
+            android:contentDescription="@string/error_image" />
 
         <TextView
             android:id="@+id/textView"

@@ -30,4 +30,6 @@
     <string name="primal">Primitiva</string>
     <string name="whole30">Whole30</string>
     <string name="apply">Aplicar</string>
+    <string name="recipes_filter">Filtro de receitas</string>
+    <string name="error_image">Imagem de erro</string>
 </resources>

@@ -14,6 +14,7 @@
             android:id="@+id/action_recipesFragment_to_recipesBottomSheet"
             app:destination="@id/recipesBottomSheet" />
     </fragment>
+
     <fragment
         android:id="@+id/favoriteRecipesFragment"
         android:name="com.example.foody.ui.fragments.favorites.FavoriteRecipesFragment"
@@ -29,6 +30,7 @@
         android:name="com.example.foody.ui.fragments.recipes.bottomsheet.RecipesBottomSheet"
         android:label="recipes_bottom_sheet"
         tools:layout="@layout/recipes_bottom_sheet" >
+
         <action
             android:id="@+id/action_recipesBottomSheet_to_recipesFragment"
             app:destination="@id/recipesFragment" />
