@@ -62,7 +62,8 @@
             android:src="@drawable/ic_restaurant"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+            android:backgroundTint="@color/purple_500"/>
 
         <ImageView
             android:id="@+id/error_imageView"
