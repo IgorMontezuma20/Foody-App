@@ -4,7 +4,7 @@ class Constants {
 
     companion object{
 
-        const val API_KEY = "b35b2f3df83c45c1a347c47edf76465f"
+        const val API_KEY = "2b68c29637fe4525969d787cae93bbde"
         const val BASE_URL = "https://api.spoonacular.com"
 
         //API Query Keys
@@ -21,8 +21,8 @@ class Constants {
 
         //BottomSheet and preferences Database
         const val DEFAULT_RECIPES_NUMBER = "50"
-        const val DEFAULT_MEAL_TYPE = "main course"
-        const val DEFAULT_DIET_TYPE = "gluten free"
+        const val DEFAULT_MEAL_TYPE = "Prato principal"
+        const val DEFAULT_DIET_TYPE = "Sem glúten"
 
         const val PREFERENCES_NAME = "foody preferences"
         const val PREFERENCES_MEAL_TYPE= "mealType"
