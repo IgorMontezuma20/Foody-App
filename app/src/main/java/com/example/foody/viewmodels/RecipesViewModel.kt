@@ -15,6 +15,7 @@ import com.example.foody.util.Constants.Companion.QUERY_API_KEY
 import com.example.foody.util.Constants.Companion.QUERY_DIET
 import com.example.foody.util.Constants.Companion.QUERY_FILL_INGREDIENTS
 import com.example.foody.util.Constants.Companion.QUERY_NUMBER
+import com.example.foody.util.Constants.Companion.QUERY_SEARCH
 import com.example.foody.util.Constants.Companion.QUERY_TYPE
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -25,7 +26,7 @@ import javax.inject.Inject
 class RecipesViewModel @Inject constructor(
     application: Application,
     private val dataStoreRepository: DataStoreRepository
-) : AndroidViewModel(application){
+) : AndroidViewModel(application) {
 
     private var mealType = DEFAULT_MEAL_TYPE
     private var dietType = DEFAULT_DIET_TYPE
@@ -41,8 +42,8 @@ class RecipesViewModel @Inject constructor(
             dataStoreRepository.saveMealAndDietType(mealType, mealTypeId, dietType, dietTypeId)
         }
 
-    fun saveBackOnline(backOnline: Boolean){
-        viewModelScope.launch(Dispatchers.IO){
+    fun saveBackOnline(backOnline: Boolean) {
+        viewModelScope.launch(Dispatchers.IO) {
             dataStoreRepository.saveBackOnline(backOnline)
         }
     }
@@ -68,17 +69,32 @@ class RecipesViewModel @Inject constructor(
         return queries
     }
 
-    fun showNetworkStatus(){
-        if (!networkStatus){
-            Toast.makeText(getApplication(),
+    fun applySearchQuery(searchQuery: String): HashMap<String, String> {
+        val queries: HashMap<String, String> = HashMap()
+        queries[QUERY_SEARCH] = searchQuery
+        queries[QUERY_NUMBER] = DEFAULT_RECIPES_NUMBER
+        queries[QUERY_API_KEY] = API_KEY
+        queries[QUERY_ADD_RECIPE_INFORMATION] = "true"
+        queries[QUERY_FILL_INGREDIENTS] = "true"
+
+        return queries
+    }
+
+    fun showNetworkStatus() {
+        if (!networkStatus) {
+            Toast.makeText(
+                getApplication(),
                 "Sem Conexão com a Internet.",
-                Toast.LENGTH_SHORT).show()
+                Toast.LENGTH_SHORT
+            ).show()
             saveBackOnline(true)
-        }else if(networkStatus){
-            if(backOnline){
-                Toast.makeText(getApplication(),
+        } else if (networkStatus) {
+            if (backOnline) {
+                Toast.makeText(
+                    getApplication(),
                     "Conexão recuperada.",
-                    Toast.LENGTH_SHORT).show()
+                    Toast.LENGTH_SHORT
+                ).show()
                 saveBackOnline(false)
             }
         }
