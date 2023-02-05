@@ -25,7 +25,7 @@
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorControlNormal">@color/white</item>
-        <item name="android:statusBarColor">@color/purple_700</item>
+        <item name="android:statusBarColor">@color/purple_500</item>
     </style>
     
     <style name="CustomTablayoutStyle" parent="Widget.Design.TabLayout">
