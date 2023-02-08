@@ -10,6 +10,7 @@ import coil.load
 import com.example.foody.R
 import com.example.foody.databinding.FragmentOverviewBinding
 import com.example.foody.models.Result
+import com.example.foody.util.Constants.Companion.RECIPE_RESULT_KEY
 import org.jsoup.Jsoup
 
 class OverviewFragment : Fragment() {
@@ -20,12 +21,12 @@ class OverviewFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentOverviewBinding.inflate(inflater, container, false)
 
         val args = arguments
-        val myBundle: Result? = args?.getParcelable("recipeBundle")
+        val myBundle: Result? = args?.getParcelable(RECIPE_RESULT_KEY)
 
         binding.mainImageView.load(myBundle?.image)
         binding.titleTextView.text = myBundle?.title
