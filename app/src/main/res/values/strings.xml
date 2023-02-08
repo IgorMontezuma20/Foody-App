@@ -23,8 +23,8 @@
     <string name="diet_type">Tipo de dieta</string>
     <string name="gluten_free">Sem glúten</string>
     <string name="ketogenic">Cetogênica</string>
-    <string name="vegetarian">Vegetariana</string>
-    <string name="vegan">Vegana</string>
+    <string name="vegetarian">Vegetariano</string>
+    <string name="vegan">Vegano</string>
     <string name="pescetarian">pescetariano</string>
     <string name="paleo">Paleo</string>
     <string name="primal">Primitiva</string>
