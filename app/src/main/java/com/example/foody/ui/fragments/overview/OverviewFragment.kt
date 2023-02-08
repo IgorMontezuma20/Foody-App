@@ -28,7 +28,7 @@ class OverviewFragment : Fragment() {
         val myBundle: Result? = args?.getParcelable("recipeBundle")
 
         binding.mainImageView.load(myBundle?.image)
-        binding.timeTextView.text = myBundle?.title
+        binding.titleTextView.text = myBundle?.title
         binding.likesTextView.text = myBundle?.aggregateLikes.toString()
         binding.timeTextView.text = myBundle?.readyInMinutes.toString()
         myBundle?.summary.let {
