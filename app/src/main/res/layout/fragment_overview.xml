@@ -144,7 +144,7 @@
         app:tint="@color/darkGray" />
 
     <TextView
-        android:id="@+id/guten_free_textView"
+        android:id="@+id/gluten_free_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -181,9 +181,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:src="@drawable/ic_checkmarck"
-        app:layout_constraintBottom_toBottomOf="@+id/guten_free_textView"
-        app:layout_constraintStart_toEndOf="@+id/guten_free_textView"
-        app:layout_constraintTop_toTopOf="@+id/guten_free_textView"
+        app:layout_constraintBottom_toBottomOf="@+id/gluten_free_textView"
+        app:layout_constraintStart_toEndOf="@+id/gluten_free_textView"
+        app:layout_constraintTop_toTopOf="@+id/gluten_free_textView"
         app:tint="@color/darkGray" />
 
     <TextView
