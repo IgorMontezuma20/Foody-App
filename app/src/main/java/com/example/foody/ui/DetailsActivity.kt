@@ -9,7 +9,7 @@ import androidx.navigation.navArgs
 import com.example.foody.R
 import com.example.foody.adapters.PagerAdapter
 import com.example.foody.databinding.ActivityDetailsBinding
-import com.example.foody.ui.fragments.ingridients.IngridientsFragment
+import com.example.foody.ui.fragments.ingredients.IngredientsFragment
 import com.example.foody.ui.fragments.instructions.InstructionsFragment
 import com.example.foody.ui.fragments.overview.OverviewFragment
 import com.google.android.material.tabs.TabLayoutMediator
@@ -29,7 +29,7 @@ class DetailsActivity : AppCompatActivity() {
 
         val fragments = ArrayList<Fragment>()
         fragments.add(OverviewFragment())
-        fragments.add(IngridientsFragment())
+        fragments.add(IngredientsFragment())
         fragments.add(InstructionsFragment())
 
         val titles = ArrayList<String>()
