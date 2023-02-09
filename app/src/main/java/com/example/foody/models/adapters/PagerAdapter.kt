@@ -1,4 +1,4 @@
-package com.example.foody.adapters
+package com.example.foody.models.adapters
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

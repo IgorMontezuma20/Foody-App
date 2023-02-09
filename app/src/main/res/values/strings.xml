@@ -39,4 +39,6 @@
     <string name="gluten_free_abbreviation">S/ glúten</string>
     <string name="recipe_image_set_content">Imagem da receita</string>
     <string name="ingredient_image">Imagem do Ingrediente</string>
+    <string name="leaf_icon">Ícone de folha</string>
+    <string name="heart_icon">Ícone de coração</string>
 </resources>

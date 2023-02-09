@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.navArgs
 import com.example.foody.R
-import com.example.foody.adapters.PagerAdapter
+import com.example.foody.models.adapters.PagerAdapter
 import com.example.foody.databinding.ActivityDetailsBinding
 import com.example.foody.ui.fragments.ingredients.IngredientsFragment
 import com.example.foody.ui.fragments.instructions.InstructionsFragment

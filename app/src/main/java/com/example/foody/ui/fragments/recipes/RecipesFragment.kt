@@ -16,7 +16,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foody.R
 import com.example.foody.viewmodels.MainViewModel
-import com.example.foody.adapters.RecipesAdapter
+import com.example.foody.models.adapters.RecipesAdapter
 import com.example.foody.databinding.FragmentRecipesBinding
 import com.example.foody.util.NetworkListener
 import com.example.foody.util.NetworkResult

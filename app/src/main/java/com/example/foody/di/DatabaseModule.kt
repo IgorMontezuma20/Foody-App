@@ -2,7 +2,7 @@ package com.example.foody.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.foody.di.database.RecipesDatabase
+import com.example.foody.data.database.RecipesDatabase
 import com.example.foody.util.Constants.Companion.DATABASE_NAME
 import dagger.Module
 import dagger.Provides

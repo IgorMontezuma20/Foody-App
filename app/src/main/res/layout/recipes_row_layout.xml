@@ -96,14 +96,15 @@
                     app:layout_constraintTop_toBottomOf="@+id/description_textView"
                     app:layout_constraintVertical_bias="0.014"
                     app:srcCompat="@drawable/ic_heart"
-                    app:tint="@color/red" />
+                    app:tint="@color/red"
+                    android:contentDescription="@string/heart_icon" />
 
                 <TextView
                     android:id="@+id/heart_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@{String.valueOf(result.aggregateLikes)}"
                     tools:text="100"
-                    setNumberOfLikes="@{result.aggregateLikes}"
                     android:textColor="@color/red"
                     android:textAlignment="center"
                     app:layout_constraintStart_toStartOf="@+id/description_textView"
@@ -117,7 +118,8 @@
                     app:layout_constraintStart_toStartOf="@+id/clock_textView"
                     app:layout_constraintTop_toTopOf="@+id/heart_imageView"
                     app:srcCompat="@drawable/ic_clock"
-                    app:tint="@color/yellow" />
+                    app:tint="@color/yellow"
+                    android:contentDescription="@string/recipe_image" />
 
                 <TextView
                     android:id="@+id/clock_textView"
@@ -139,14 +141,15 @@
                     app:layout_constraintEnd_toEndOf="@+id/textView6"
                     app:layout_constraintStart_toStartOf="@+id/textView6"
                     app:layout_constraintTop_toTopOf="@+id/clock_ImageView"
-                    app:srcCompat="@drawable/ic_leaf" />
+                    app:srcCompat="@drawable/ic_leaf"
+                    android:contentDescription="@string/leaf_icon" />
 
                 <TextView
                     android:id="@+id/textView6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:text="Vegano"
+                    android:text="@string/vegan"
                     applyVeganColor="@{result.vegan}"
                     android:textAlignment="center"
                     app:layout_constraintStart_toEndOf="@+id/clock_textView"
