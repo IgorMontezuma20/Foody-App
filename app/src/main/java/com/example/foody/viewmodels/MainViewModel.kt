@@ -24,7 +24,7 @@ class MainViewModel @Inject constructor(
 
     //Room
 
-    val readRecipes: LiveData<List<RecipesEntity>> = repository.local.redDatabase().asLiveData()
+    val readRecipes: LiveData<List<RecipesEntity>> = repository.local.readRecipes().asLiveData()
 
     private fun insertRecipes(recipesEntity: RecipesEntity) =
         viewModelScope.launch(Dispatchers.IO) {
