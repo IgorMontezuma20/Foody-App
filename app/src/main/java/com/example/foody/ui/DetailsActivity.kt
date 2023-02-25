@@ -2,7 +2,9 @@ package com.example.foody.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.navArgs
@@ -13,12 +15,19 @@ import com.example.foody.ui.fragments.ingredients.IngredientsFragment
 import com.example.foody.ui.fragments.instructions.InstructionsFragment
 import com.example.foody.ui.fragments.overview.OverviewFragment
 import com.example.foody.util.Constants.Companion.RECIPE_RESULT_KEY
+import com.example.foody.viewmodels.MainViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 
 class DetailsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailsBinding
     private val args by navArgs<DetailsActivityArgs>()
+    private val mainViewModel: MainViewModel by viewModels()
+
+    private var recipeSaved = false
+    private var savedRecipeId = 0
+
+    private lateinit var menuItem: MenuItem
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailsBinding.inflate(layoutInflater)
@@ -54,6 +63,13 @@ class DetailsActivity : AppCompatActivity() {
         TabLayoutMediator(binding.tabLayout, binding.viewpager2) {tab, position ->
             tab.text = titles[position]
         }.attach()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.details_menu, menu)
+        menuItem = menu!!.findItem(R.id.save_to_favorites_menu)
+        //checkSavedRecipes(menuItem)
+        return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

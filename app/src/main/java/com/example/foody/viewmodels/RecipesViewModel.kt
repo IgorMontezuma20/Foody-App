@@ -18,6 +18,7 @@ import com.example.foody.util.Constants.Companion.QUERY_NUMBER
 import com.example.foody.util.Constants.Companion.QUERY_SEARCH
 import com.example.foody.util.Constants.Companion.QUERY_TYPE
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -68,7 +69,6 @@ class RecipesViewModel @Inject constructor(
 
         return queries
     }
-
     fun applySearchQuery(searchQuery: String): HashMap<String, String> {
         val queries: HashMap<String, String> = HashMap()
         queries[QUERY_SEARCH] = searchQuery
@@ -76,9 +76,11 @@ class RecipesViewModel @Inject constructor(
         queries[QUERY_API_KEY] = API_KEY
         queries[QUERY_ADD_RECIPE_INFORMATION] = "true"
         queries[QUERY_FILL_INGREDIENTS] = "true"
-
         return queries
     }
+
+
+    @ViewModelScoped
 
     fun showNetworkStatus() {
         if (!networkStatus) {

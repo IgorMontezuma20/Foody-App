@@ -41,4 +41,5 @@
     <string name="ingredient_image">Imagem do Ingrediente</string>
     <string name="leaf_icon">Ícone de folha</string>
     <string name="heart_icon">Ícone de coração</string>
+    <string name="save_to_favorites">Adicionar aos favoritos</string>
 </resources>
